@@ -1,0 +1,32 @@
+#!/bin/bash
+set -euo pipefail
+
+SQL_ACCOUNT="$BUILDKITE_PLUGIN_SNOWFLAKE_SQL_ACCOUNT"
+SQL_JWT="$BUILDKITE_PLUGIN_SNOWFLAKE_SQL_JWT"
+SQL_PATH="$BUILDKITE_PLUGIN_SNOWFLAKE_SQL_PATH"
+
+SQL=$(cat ${SQL_PATH} | tr -s '\n' ' ')
+
+JSON=$(cat <<-END
+{
+  "statement": "${SQL}",
+  "timeout": 60,
+  "database": "IMDB",
+  "schema": "PUBLIC",
+  "warehouse": "COMPUTE_WH",
+  "role": "ACCOUNTADMIN"
+}
+END
+)
+
+curl -i -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer ${SQL_JWT}" \
+    -H "Accept: application/json" \
+    -H "User-Agent: myApplicationName/1.0" \
+    -H "X-Snowflake-Authorization-Token-Type: KEYPAIR_JWT" \
+    -d "${JSON}" \
+    "https://${SQL_ACCOUNT}.snowflakecomputing.com/api/v2/statements"
+
+
+buildkite-agent annotate "SQL run succesfully"
