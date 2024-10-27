@@ -22,7 +22,7 @@ steps:
 
 ### `account` (Required, string)
 
-Your Snowflake account - i.e., https://${ACCOUNT}.snowflakecomputing.com/.
+Your Snowflake account - i.e., `https://${ACCOUNT}.snowflakecomputing.com/`.
 
 ### `jwt` (Required, string)
 
