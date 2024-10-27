@@ -13,7 +13,7 @@ export BUILDKITE_AGENT_STUB_DEBUG=/dev/tty
   stub buildkite-agent 'annotate "SQL run succesfully" : echo SQL run succesfully'
   stub curl 'echo Done'
 
-  run "$PWD/hooks/post-command"
+  run "$PWD/hooks/command"
 
   assert_success
   assert_output --partial "SQL run succesfully"
