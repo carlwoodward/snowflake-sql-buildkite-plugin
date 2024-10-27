@@ -6,19 +6,19 @@ Runs SQL in Snowflake to allow Buildkite to become a data engineering pipeline o
 
 ## Rationale
 
-CONTEXT: I've led data engineering as part of my last two roles. ETL (Extract, Transform, Load) tooling is challenging to develop against and operate.
+**CONTEXT:** I've led data engineering as part of my last two roles. ETL (Extract, Transform, Load) tooling is challenging to develop against and operate.
 
 - Configuring and operating tools is time consuming, usually requiring full time staff.
 - AirFlow uses Python specific DSL for creating pipelines - requiring developers to lock into that tool.
 - Microsoft Azure Data Factory produces JSON that is hard to peer review using a pull request process and integrate will with Git.
 - Connecting with alerting tools like Slack is another item to manage.
 
-BACKGROUND: Data engineering splits into batch data ETL (or ELT) and streaming. Many companies use batch. And the focus for this experiment is batch ETL.
+**BACKGROUND:** Data engineering splits into batch data ETL (or ELT) and streaming. Many companies use batch. And the focus for this experiment is batch ETL.
 
 - Examples of tools in this space are https://airflow.apache.org/ and https://azure.microsoft.com/en-us/products/data-factory.
 - There are many reasons to use existing tooling for ETL e.g., active community, focus on specifics of ETL, breadth of connectors.
 
-WHY TRY BUILDKITE TOOLS for Data Pipeline Orchestration:
+**WHY TRY BUILDKITE TOOLS** for Data Pipeline Orchestration:
 
 "Airflow® is a batch workflow orchestration platform. The Airflow framework contains operators to connect with many technologies and is easily extensible to connect with a new technology. If your workflows have a clear start and end, and run at regular intervals, they can be programmed as an Airflow DAG." https://airflow.apache.org/docs/apache-airflow/stable/index.html
 
@@ -37,7 +37,7 @@ Buildkite excels in extensibility because it allows developers to use any techno
 - Buildkite's hybrid architecture gives large customers control over their infrastructure without having to host user interfaces and connectors to alerting systems.
 - Existing plugin ecosystem makes it simple to connect with external systems for alerting.
 
-THOUGHT EXPERIMENT: This implementation isn't fully featured, instead designed to test out the idea.
+**THOUGHT EXPERIMENT:** This implementation isn't fully featured, instead designed to test out the idea.
 
 - Value interpolation in SQL would need to be implemented.
 - Connecting to Snowflake bindings in API hasn't been built.
