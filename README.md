@@ -2,14 +2,14 @@
 
 *NOTE: The intent of this project is to test out an idea and it's not meant for production.*
 
-Runs SQL in Snowflake to allow Buildkite to become a data engineering pipeline orchestration framework like AirFlow.
+Runs SQL in Snowflake to allow Buildkite to become a data engineering pipeline orchestration framework like Airflow.
 
 ## Rationale
 
 **CONTEXT:** I've led data engineering as part of my last two roles. ETL (Extract, Transform, Load) tooling is challenging to develop against and operate.
 
 - Configuring and operating tools is time consuming, usually requiring full time staff.
-- AirFlow uses Python specific DSL for creating pipelines - requiring developers to lock into that tool.
+- Airflow uses Python specific DSL for creating pipelines - requiring developers to lock into that tool.
 - Microsoft Azure Data Factory produces JSON that is hard to peer review using a pull request process and integrate will with Git.
 - Connecting with alerting tools like Slack is another item to manage.
 
@@ -22,9 +22,9 @@ Runs SQL in Snowflake to allow Buildkite to become a data engineering pipeline o
 
 "Airflow® is a batch workflow orchestration platform. The Airflow framework contains operators to connect with many technologies and is easily extensible to connect with a new technology. If your workflows have a clear start and end, and run at regular intervals, they can be programmed as an Airflow DAG." https://airflow.apache.org/docs/apache-airflow/stable/index.html
 
-Builtkite has significant overlaps with AirFlow's capabilities:
+Builtkite has significant overlaps with Airflow's capabilities:
 
-| Capability | AirFlow | Buildkite |
+| Capability | Airflow | Buildkite |
 | :-------- | :------: | :------: |
 | Batch processing | Yes |Yes |
 | Schedule jobs / pipelines | Yes | Yes |
@@ -32,7 +32,7 @@ Builtkite has significant overlaps with AirFlow's capabilities:
 | Extensible programming model | Yes | Yes |
 | Control retries | Yes | Yes |
 
-Buildkite excels in extensibility because it allows developers to use any technology (by working at an OS / Docker level) and stiches interactions together through YAML.
+Buildkite excels in extensibility because it allows developers to use any technology (by working at an OS / Docker level) and stitches interactions together through YAML.
 
 - Buildkite's hybrid architecture gives large customers control over their infrastructure without having to host user interfaces and connectors to alerting systems.
 - Existing plugin ecosystem makes it simple to connect with external systems for alerting.
@@ -80,9 +80,13 @@ How many seconds your sql call can run for.
 
 Which database is your data sitting in.
 
+### `schema` (Required, number)
+
+What schema contains the tables you are looking at.
+
 ### `warehouse` (Required, number)
 
-Which database is your data sitting in.
+What compute infrastructure should be used to run your query.
 
 ### `role` (Required, number)
 
