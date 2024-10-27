@@ -24,12 +24,13 @@ WHY TRY BUILDKITE TOOLS for Data Pipeline Orchestration:
 
 Builtkite has significant overlaps with AirFlow's capabilities:
 
-|Capability|AirFlow|Buildkite|
-|Batch processing|Yes|Yes|
-|Schedule jobs / pipelines|Yes|Yes|
-|Directed acyclic graph|Yes|Yes|
-|Extensible programming model|Yes|Yes|
-|Control retries|Yes|Yes|
+| Capability | AirFlow | Buildkite |
+| :-------- | :------: | :------: |
+| Batch processing | Yes |Yes |
+| Schedule jobs / pipelines | Yes | Yes |
+| Directed acyclic graph | Yes | Yes |
+| Extensible programming model | Yes | Yes |
+| Control retries | Yes | Yes |
 
 Buildkite excels in extensibility because it allows developers to use any technology (by working at an OS / Docker level) and stiches interactions together through YAML.
 
