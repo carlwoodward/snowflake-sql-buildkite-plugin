@@ -1,5 +1,7 @@
 # Snowflake SQL Buildkite Plugin
 
+*NOTE: The intent of this project is to test out an idea and it's not meant for production.*
+
 Runs SQL in Snowflake to allow Buildkite to become a data engineering pipeline orchestration framework like AirFlow.
 
 ## Example
