@@ -42,6 +42,7 @@ Buildkite excels in extensibility because it allows developers to use any techno
 - Value interpolation in SQL would need to be implemented.
 - Connecting to Snowflake bindings in API hasn't been built.
 - Ability to read results and run jobs based on logic isn't part of the implementation.
+- Ideally generation of the authentication JWT would be done by this plugin.
 
 ## Example
 
@@ -70,6 +71,22 @@ Your authentication token for working with Snowflake. In the future this will be
 ### `path` (Required, string)
 
 The path to your SQL file that will be executed on your Snowflake environment.
+
+### `timeout` (Required, number)
+
+How many seconds your sql call can run for.
+
+### `database` (Required, string)
+
+Which database is your data sitting in.
+
+### `warehouse` (Required, number)
+
+Which database is your data sitting in.
+
+### `role` (Required, number)
+
+What role is setup to execute this query.
 
 ## Developing
 
