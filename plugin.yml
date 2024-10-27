@@ -1,8 +1,7 @@
 name: Snowflake Sql
 description: Runs SQL against a Snowflake account in order to transform Buildkite into a Data Engineering pipeline orchestration tool.
 author: https://github.com/carlwoodward
-requirements:
-  - envsubst
+requirements: []
 configuration:
   properties:
     account:
