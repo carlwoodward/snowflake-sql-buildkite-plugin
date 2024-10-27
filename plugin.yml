@@ -10,8 +10,21 @@ configuration:
       type: string
     path:
       type: string
+    timeout:
+      type: number
+    database:
+      type: string
+    warehouse:
+      type: string
+    role:
+      type: string
   required:
     - account
     - jwt
     - path
+    - timeout
+    - database
+    - schema
+    - warehouse
+    - role
   additionalProperties: false
